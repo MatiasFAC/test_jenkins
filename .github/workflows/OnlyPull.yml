@@ -14,12 +14,16 @@ jobs:
         shell: pwsh
         run: |
           iisreset /stop
-      - name: git pull
-        shell: pwsh
-        run: |
-           cd C:/Users/mts/Documents/test_jenkins
-           git pull
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+      # - name: git pull
+      #   shell: pwsh
+      #   run: |
+      #      cd C:/Users/mts/Documents/test_jenkins
+      #      git pull
       - name: Start IIS
         shell: pwsh
         run: |
-          iisreset /start
+          iisreset /start 
