@@ -5,3 +5,21 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
+jobs:
+  job1:
+    runs-on: windows-latest
+    steps:
+      - name: Stop IIS
+        shell: pwsh
+        run: |
+          iisreset /stop
+      - name: git pull
+        shell: pwsh
+        run: |
+           cd C:\Users\mts\Documents\test_jenkins\
+           git pull
+      - name: Start IIS
+        shell: pwsh
+        run: |
+          iisreset /start
