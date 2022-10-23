@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Git Pull
         run: |
+          cd "C:/Users/mts/Documents/test_jenkins"
           date > generated.txt
           git pull
       # - name: git pull
