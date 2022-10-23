@@ -11,17 +11,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Git Pull
-        run: |
-          cd "C:/Users/mts/Documents/test_jenkins"
-          date > generated.txt
-          git pull
-      # - name: git pull
-      #   shell: pwsh
-      #   run: |
-      #      cd C:/Users/mts/Documents/test_jenkins
-      #      git pull
-      - name: IIS restart
+      - name: IIS stop
         shell: pwsh
         run: |
-          iisreset 
+          iisreset /stop
+      # - name: IIS start
+      #   shell: pwsh
+      #   run: |
+      #    iisreset /start
