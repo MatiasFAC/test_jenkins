@@ -10,20 +10,17 @@ jobs:
   job1:
     runs-on: windows-latest
     steps:
-      - name: Stop IIS
-        shell: pwsh
+      - uses: actions/checkout@v3
+      - name: Git Pull
         run: |
-          iisreset /stop
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          path: main
+          date > generated.txt
+          git pull
       # - name: git pull
       #   shell: pwsh
       #   run: |
       #      cd C:/Users/mts/Documents/test_jenkins
       #      git pull
-      - name: Start IIS
+      - name: IIS restart
         shell: pwsh
         run: |
-          iisreset /start 
+          iisreset 
