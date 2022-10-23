@@ -17,7 +17,7 @@ jobs:
       - name: git pull
         shell: pwsh
         run: |
-           cd C:\Users\mts\Documents\test_jenkins\
+           cd C:/Users/mts/Documents/test_jenkins
            git pull
       - name: Start IIS
         shell: pwsh
