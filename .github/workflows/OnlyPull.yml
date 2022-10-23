@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: IIS stop
-        shell: pwsh
+        shell: powershell
         run: |
           iisreset /stop
       # - name: IIS start
